@@ -3,6 +3,16 @@ if(Meteor.isServer) {
 }
 
 if(Meteor.isClient) {
+  Tinytest.addAsync('gen', function (test, done) {
+    DeviceId.gen(function(error, deviceId) {
+      test.isUndefined(error);
+      test.isTrue(typeof deviceId === 'string');
+      test.equal(DeviceId.get(), deviceId);
+
+      done();
+    })
+  });
+
   Tinytest.addAsync('deviceId/gen', function (test, done) {
     Meteor.call('deviceId/gen', function(error, deviceId) {
       test.isUndefined(error, "Error calling deviceId/gen");

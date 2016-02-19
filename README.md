@@ -5,9 +5,13 @@ Android only.
 ## Installation
 meteor add marvin:cordova-device-id
 
-## Usage
+## Usage - Client
+// Generate a new deviceId, store locally and on server
+DeviceId.gen(function(error, deviceId) {
 
-### Client
+})
+
+## Full API
 // get new Random.id() that does not already exist server side.
 // saves to server
 Meteor.call('deviceId/gen', function(error, deviceId) {
@@ -24,11 +28,5 @@ Meteor.call('deviceId/isClaimed', function(error, isClaimed) {
 
 })
 
-### Cordova
-// save id to local storage. synchronous.
+// save id to localStorage. synchronous.
 DeviceId.store(deviceId)
-
-// Generate a new deviceId, store locally and on server
-DeviceId.genAndStore(function(error, deviceId) {
-
-})
