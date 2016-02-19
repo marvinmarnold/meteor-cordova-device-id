@@ -1,7 +1,7 @@
 Package.describe({
   name: 'marvin:cordova-device-id',
   version: '0.0.1',
-  summary: 'Facilitates anonymous data collection by allowing client to generate random ID and store on device through Cordova',
+  summary: 'Facilitates anonymous data collection by allowing client to generate random ID and store on device through Cordova + sync w/ server.',
   git: '',
   documentation: 'README.md'
 });
