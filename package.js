@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'marvin:cordova-device-id',
+  name: 'marvin:device-id',
   version: '0.0.1',
   summary: 'Facilitates anonymous data collection by allowing client to generate random ID and store on device through Cordova + sync w/ server.',
   git: '',
@@ -20,6 +20,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('marvin:cordova-device-id');
+  api.use('marvin:device-id');
   api.addFiles('device-id-tests.js');
 });

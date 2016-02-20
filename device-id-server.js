@@ -34,3 +34,7 @@ var store = function(deviceId) {
 
   return !!DeviceIds.insert({deviceId: deviceId})
 }
+
+_.extend(DeviceId, {
+  isClaimed: isClaimed
+})
