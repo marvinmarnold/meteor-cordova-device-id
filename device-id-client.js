@@ -14,6 +14,7 @@ _.extend(DeviceId, {
   },
 
   store(deviceId) {
+    Session.set('device-id-ready', true)
     window.localStorage.setItem(storedName, deviceId)
   },
 
@@ -25,11 +26,12 @@ _.extend(DeviceId, {
             return callback(error);
 
           DeviceId.store(deviceId);
-          return callback(undefined, deviceId);
+          callback(undefined, deviceId);
         })
+      } else {
+        Session.set('device-id-ready', true)
+        callback(undefined, DeviceId.get());
       }
-
-      callback(undefined, DeviceId.get());
     })
   },
 
